@@ -300,6 +300,7 @@ const jPositions = [
 	[55, 29],
 	[57, 29]
 ];
+
 const kPositions = [
 	[51, 21],
 	[61, 21],
@@ -396,6 +397,7 @@ const nPositions = [
 	[51, 29],
 	[67, 29]
 ];
+
 const oPositions = [
 	[55, 21],
 	[57, 21],
@@ -648,6 +650,7 @@ const wPositions = [
 	[51, 29],
 	[67, 29]
 ];
+
 const xPositions = [
 	[51, 21],
 	[69, 21],
@@ -718,30 +721,32 @@ const zPositions = [
 ];
 
 module.exports = {
-	aPositions,
-	bPositions,
-	cPositions,
-	dPositions,
-	ePositions,
-	fPositions,
-	gPositions,
-	hPositions,
-	iPositions,
-	jPositions,
-	kPositions,
-	lPositions,
-	mPositions,
-	nPositions,
-	oPositions,
-	pPositions,
-	qPositions,
-	rPositions,
-	sPositions,
-	tPositions,
-	uPositions,
-	vPositions,
-	wPositions,
-	xPositions,
-	yPositions,
-	zPositions
+	alphabetDimensions: [
+		aPositions,
+		bPositions,
+		cPositions,
+		dPositions,
+		ePositions,
+		fPositions,
+		gPositions,
+		hPositions,
+		iPositions,
+		jPositions,
+		kPositions,
+		lPositions,
+		mPositions,
+		nPositions,
+		oPositions,
+		pPositions,
+		qPositions,
+		rPositions,
+		sPositions,
+		tPositions,
+		uPositions,
+		vPositions,
+		wPositions,
+		xPositions,
+		yPositions,
+		zPositions
+	]
 };
