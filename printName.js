@@ -3,7 +3,7 @@
 const { stdout } = process;
 
 const alphabetDimensions = require("./dimensions");
-const { shapes, colours } = require("./shapeAndColour");
+const { shapes, colours, alphabetsPosition } = require("./shapeAndColour");
 const { hideCursor, onClose } = require("./screen");
 
 class printName {
@@ -20,6 +20,7 @@ class printName {
 			const dimensions = alphabetDimensions[alphabet];
 			this.requiredDimensions.push(dimensions);
 		});
+		this.screenPositions = alphabetsPosition.slice();
 	}
 
 	printGivenName() {
@@ -28,18 +29,24 @@ class printName {
 		setInterval(() => {
 			const char = shapes[Math.floor(Math.random() * shapes.length)];
 			const color = colours[Math.floor(Math.random() * colours.length)];
-
-			this.printGivenAlphabet(this.requiredDimensions.shift(), color(char));
-		}, 1000);
+			this.printGivenAlphabet(
+				this.requiredDimensions.shift(),
+				this.screenPositions.shift(),
+				color(char)
+			);
+		}, 100);
 	}
 
-	printGivenAlphabet(dimensions, char) {
-		console.clear();
+	printGivenAlphabet(dimensions, screenPositions, char) {
 		if (!dimensions) {
 			onClose();
 		}
 		dimensions.forEach(position => {
-			this.printAt(char, position[0], position[1] - 10);
+			this.printAt(
+				char,
+				screenPositions[0] + position[0],
+				screenPositions[1] + position[1]
+			);
 		});
 	}
 

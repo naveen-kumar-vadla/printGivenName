@@ -1,7 +1,7 @@
 "use strict";
 const chalk = require("chalk");
 
-let colours = [
+const colours = [
 	chalk.red.bold,
 	chalk.green.bold,
 	chalk.yellow.bold,
@@ -17,7 +17,7 @@ let colours = [
 	chalk.whiteBright.bold
 ];
 
-let shapes = [
+const shapes = [
 	"❖",
 	"⚆",
 	"⦿",
@@ -76,4 +76,30 @@ let shapes = [
 	"✵"
 ];
 
-module.exports = { shapes, colours };
+const alphabetsPosition = [
+	[1, 1],
+	[22, 1],
+	[43, 1],
+	[64, 1],
+	[85, 1],
+	[106, 1],
+	[1, 10],
+	[22, 10],
+	[43, 10],
+	[64, 10],
+	[85, 10],
+	[106, 10],
+	[1, 19],
+	[22, 19],
+	[43, 19],
+	[64, 19],
+	[85, 19],
+	[106, 19],
+	[1, 28],
+	[22, 28],
+	[43, 28],
+	[64, 28],
+	[85, 28],
+	[106, 28]
+];
+module.exports = { shapes, colours, alphabetsPosition };
