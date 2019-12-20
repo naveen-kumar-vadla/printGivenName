@@ -1,7 +1,6 @@
 "use strict";
 
 const { stdout } = process;
-const chalk = require("chalk");
 
 const alphabetDimensions = require("./dimensions");
 const { shapes, colours } = require("./shapeAndColour");
@@ -11,10 +10,11 @@ class printAlphabets {
 	constructor(name) {
 		this.alphabets = name.toUpperCase().split("");
 	}
+
 	printGivenName() {
 		let requiredDimensions = [];
 
-		this.alphabets.forEach(alphabet => {
+		this.alphabets.map(alphabet => {
 			const dimensions = alphabetDimensions[alphabet];
 			requiredDimensions.push(dimensions);
 		});
@@ -37,7 +37,6 @@ class printAlphabets {
 		console.clear();
 		if (!dimensions) {
 			clearInterval(interval1);
-
 			onClose();
 		}
 		dimensions.forEach(position => {

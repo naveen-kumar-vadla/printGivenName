@@ -2,22 +2,22 @@
 const chalk = require("chalk");
 
 let colours = [
-	chalk.black,
-	chalk.red,
-	chalk.green,
-	chalk.yellow,
-	chalk.magenta,
-	chalk.cyan,
-	chalk.white,
-	chalk.gray,
-	chalk.blackBright,
-	chalk.redBright,
-	chalk.greenBright,
-	chalk.yellowBright,
-	chalk.blackBright,
-	chalk.magentaBright,
-	chalk.cyanBright,
-	chalk.whiteBright
+	chalk.black.bold,
+	chalk.red.bold,
+	chalk.green.bold,
+	chalk.yellow.bold,
+	chalk.magenta.bold,
+	chalk.cyan.bold,
+	chalk.white.bold,
+	chalk.gray.bold,
+	chalk.blackBright.bold,
+	chalk.redBright.bold,
+	chalk.greenBright.bold,
+	chalk.yellowBright.bold,
+	chalk.blackBright.bold,
+	chalk.magentaBright.bold,
+	chalk.cyanBright.bold,
+	chalk.whiteBright.bold
 ];
 
 let shapes = [
