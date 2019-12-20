@@ -44,9 +44,7 @@ class printName {
 	}
 
 	printGivenAlphabet(dimensions, screenPositions, char) {
-		if (!dimensions) {
-			onClose();
-		}
+		if (!dimensions) onClose();
 		dimensions.forEach(position => {
 			this.printAt(
 				char,

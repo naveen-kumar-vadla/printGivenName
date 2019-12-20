@@ -713,6 +713,18 @@ const zPositions = [
 
 const spacePositions = [[1, 1]];
 
+const hiphenPositions = [
+	[1, 5],
+	[3, 5],
+	[5, 5],
+	[7, 5],
+	[9, 5],
+	[11, 5],
+	[13, 5],
+	[15, 5],
+	[17, 5]
+];
+
 module.exports = {
 	A: aPositions,
 	B: bPositions,
@@ -740,5 +752,6 @@ module.exports = {
 	X: xPositions,
 	Y: yPositions,
 	Z: zPositions,
-	" ": spacePositions
+	" ": spacePositions,
+	"-": hiphenPositions
 };
