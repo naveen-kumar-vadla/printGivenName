@@ -13,6 +13,7 @@ class printName {
 			.toUpperCase()
 			.split("");
 		this.requiredDimensions = [];
+		this.screenPositions = [];
 	}
 
 	getDimensions() {
@@ -20,8 +21,6 @@ class printName {
 			const dimensions = alphabetDimensions[alphabet];
 			this.requiredDimensions.push(dimensions);
 		});
-
-		this.screenPositions = alphabetsPosition.slice();
 	}
 
 	printGivenName() {
@@ -31,13 +30,17 @@ class printName {
 			const symbol = shapes[Math.floor(Math.random() * shapes.length)];
 			const color = colours[Math.floor(Math.random() * colours.length)];
 			const char = this.alphabets[i] == " " ? " " : symbol;
+			if (this.screenPositions.length == 0) {
+				console.clear();
+				this.screenPositions = alphabetsPosition.slice();
+			}
 			this.printGivenAlphabet(
 				this.requiredDimensions.shift(),
 				this.screenPositions.shift(),
 				color(char)
 			);
 			i++;
-		}, 100);
+		}, 500);
 	}
 
 	printGivenAlphabet(dimensions, screenPositions, char) {
