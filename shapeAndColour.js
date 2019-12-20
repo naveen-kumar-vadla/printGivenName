@@ -2,7 +2,6 @@
 const chalk = require("chalk");
 
 let colours = [
-	chalk.black.bold,
 	chalk.red.bold,
 	chalk.green.bold,
 	chalk.yellow.bold,
@@ -10,7 +9,6 @@ let colours = [
 	chalk.cyan.bold,
 	chalk.white.bold,
 	chalk.gray.bold,
-	chalk.blackBright.bold,
 	chalk.redBright.bold,
 	chalk.greenBright.bold,
 	chalk.yellowBright.bold,

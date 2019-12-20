@@ -25,22 +25,17 @@ class printName {
 	printGivenName() {
 		hideCursor();
 
-		const interval1 = setInterval(() => {
-			const character = shapes[Math.floor(Math.random() * shapes.length)];
+		setInterval(() => {
+			const char = shapes[Math.floor(Math.random() * shapes.length)];
 			const color = colours[Math.floor(Math.random() * colours.length)];
 
-			this.printGivenAlphabet(
-				this.requiredDimensions.shift(),
-				interval1,
-				color(character)
-			);
+			this.printGivenAlphabet(this.requiredDimensions.shift(), color(char));
 		}, 1000);
 	}
 
-	printGivenAlphabet(dimensions, interval1, char) {
+	printGivenAlphabet(dimensions, char) {
 		console.clear();
 		if (!dimensions) {
-			clearInterval(interval1);
 			onClose();
 		}
 		dimensions.forEach(position => {
