@@ -6,19 +6,23 @@ const alphabetDimensions = require("./dimensions");
 const { shapes, colours } = require("./shapeAndColour");
 const { hideCursor, onClose } = require("./screen");
 
-class printAlphabets {
+class printName {
 	constructor(name) {
-		this.alphabets = name.toUpperCase().split("");
+		this.alphabets = name
+			.join("")
+			.toUpperCase()
+			.split("");
+		this.requiredDimensions = [];
+	}
+
+	getDimensions() {
+		this.alphabets.map(alphabet => {
+			const dimensions = alphabetDimensions[alphabet];
+			this.requiredDimensions.push(dimensions);
+		});
 	}
 
 	printGivenName() {
-		let requiredDimensions = [];
-
-		this.alphabets.map(alphabet => {
-			const dimensions = alphabetDimensions[alphabet];
-			requiredDimensions.push(dimensions);
-		});
-
 		hideCursor();
 
 		const interval1 = setInterval(() => {
@@ -26,7 +30,7 @@ class printAlphabets {
 			const color = colours[Math.floor(Math.random() * colours.length)];
 
 			this.printGivenAlphabet(
-				requiredDimensions.shift(),
+				this.requiredDimensions.shift(),
 				interval1,
 				color(character)
 			);
@@ -51,10 +55,10 @@ class printAlphabets {
 }
 
 const main = () => {
-	const name = process.argv[2];
+	const name = new printName(process.argv.slice(2));
 	console.clear();
-	const printNameAlphabets = new printAlphabets(name);
-	printNameAlphabets.printGivenName();
+	name.getDimensions();
+	name.printGivenName();
 };
 
 main();

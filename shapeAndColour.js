@@ -14,7 +14,6 @@ let colours = [
 	chalk.redBright.bold,
 	chalk.greenBright.bold,
 	chalk.yellowBright.bold,
-	chalk.blackBright.bold,
 	chalk.magentaBright.bold,
 	chalk.cyanBright.bold,
 	chalk.whiteBright.bold
