@@ -53,8 +53,8 @@ class printAlphabets {
 const main = () => {
 	const name = process.argv[2];
 	console.clear();
-	const print = new printAlphabets(name);
-	print.printGivenName();
+	const printNameAlphabets = new printAlphabets(name);
+	printNameAlphabets.printGivenName();
 };
 
 main();
