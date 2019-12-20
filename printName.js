@@ -9,7 +9,7 @@ const { hideCursor, onClose } = require("./screen");
 class printName {
 	constructor(name) {
 		this.alphabets = name
-			.join("")
+			.join(" ")
 			.toUpperCase()
 			.split("");
 		this.requiredDimensions = [];
@@ -20,20 +20,23 @@ class printName {
 			const dimensions = alphabetDimensions[alphabet];
 			this.requiredDimensions.push(dimensions);
 		});
+
 		this.screenPositions = alphabetsPosition.slice();
 	}
 
 	printGivenName() {
 		hideCursor();
-
+		let i = 0;
 		setInterval(() => {
-			const char = shapes[Math.floor(Math.random() * shapes.length)];
+			const symbol = shapes[Math.floor(Math.random() * shapes.length)];
 			const color = colours[Math.floor(Math.random() * colours.length)];
+			const char = this.alphabets[i] == " " ? " " : symbol;
 			this.printGivenAlphabet(
 				this.requiredDimensions.shift(),
 				this.screenPositions.shift(),
 				color(char)
 			);
+			i++;
 		}, 100);
 	}
 
