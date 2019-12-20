@@ -4,6 +4,7 @@ const { stdout } = process;
 
 const alphabetDimensions = require("./dimensions");
 const { shapes, colours } = require("./shapeAndColour");
+const { hideCursor, onClose } = require("./screen");
 
 const printAt = (str, x, y) => {
 	stdout.cursorTo(x, y);
@@ -14,10 +15,10 @@ const printGivenAlphabet = (dimensions, interval, char) => {
 	console.clear();
 	if (!dimensions) {
 		clearInterval(interval);
-		return;
+		onClose();
 	}
 	dimensions.forEach(position => {
-		printAt(char, position[0], position[1]);
+		printAt(char, position[0], position[1] - 10);
 	});
 };
 
@@ -27,10 +28,10 @@ const printAlphabets = function(alphabets) {
 		const dimensions = alphabetDimensions[alphabet];
 		requiredDimensions.push(dimensions);
 	});
+	hideCursor();
 	const interval = setInterval(() => {
 		const character = shapes[Math.floor(Math.random() * shapes.length)];
 		const color = colours[Math.floor(Math.random() * colours.length)];
-
 		printGivenAlphabet(requiredDimensions.shift(), interval, color(character));
 	}, 1000);
 };
@@ -41,4 +42,5 @@ const main = () => {
 
 	printAlphabets(alphabets);
 };
+
 main();
